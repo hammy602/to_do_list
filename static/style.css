@@ -1,0 +1,174 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e3a402, #eebd0c);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px; /* Increased padding for larger container */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 580px; /* Increased width */
+    height: auto; /* Make height auto to adjust based on content */
+    max-height: 90vh; /* Prevent overflow on small screens */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading without stroke effect */
+h1 {
+    font-size: 2.9em; /* Increased font size */
+    color: white; /* Text color */
+    margin-bottom: 30px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px; /* Increased margin */
+}
+
+form input {
+    flex: 1;
+    padding: 14px; /* Increased padding */
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 1.45em; /* Increased font size */
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    transform: scale(1.05);
+    border-color: #ff6600;
+}
+
+/* Add Task Button Styling */
+form button {
+    padding: 14px; /* Increased padding */
+    background: #ff6600;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    font-size: 1.45em; /* Increased font size */
+    cursor: pointer;
+    height: 100%; /* Ensure it matches the height of the input */
+    transition: background 0.3s, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add Task Button Hover Animation */
+form button:hover {
+    background: #cc5200;
+    animation: buttonHover 0.3s ease-in-out; /* New hover animation */
+}
+
+/* Button Hover Animation */
+@keyframes buttonHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Slightly enlarge the button */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Task List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px; /* Adjusted for larger container */
+    overflow-y: auto; /* Scrollable list if too long */
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 14px; /* Increased padding */
+    margin: 15px 0; /* Increased margin */
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start from below */
+    animation: fadeInTask 0.5s forwards; /* Fade-in effect */
+}
+
+/* Fade-in effect for tasks */
+@keyframes fadeInTask {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Delete Button Styling */
+ul li form {
+    display: inline; /* Keep it on the same line */
+}
+
+ul li button {
+    background: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease;
+}
+
+ul li button:hover {
+    background: #cc2929;
+    transform: scale(1.1);
+}
+
+ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s ease;
+}
+
+ul li a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
